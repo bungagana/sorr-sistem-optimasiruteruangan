@@ -2,7 +2,6 @@ streamlit_option_menu==0.4.0
 streamlit
 plotly
 Txt
-option_menu
 networkx
 matplotlib
 graphviz
