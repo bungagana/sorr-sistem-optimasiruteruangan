@@ -1,5 +1,6 @@
 streamlit-option-menu
 streamlit
+option_menu
 plotly
 Txt
 networkx
