@@ -1,4 +1,5 @@
-streamlit_option_menu==0.2.0
+streamlit_option_menu
+option_menu
 streamlit
 plotly
 Txt
