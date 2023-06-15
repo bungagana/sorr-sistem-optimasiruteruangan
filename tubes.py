@@ -189,7 +189,7 @@ elif selected == "Show":
     # Buat tombol untuk setiap semut
     ant_buttons = []
     for i in range(jumlah_semua_semut):
-        ant_buttons.append(st.button(f"Lanjut Semut {i+1}"))
+        ant_buttons.append(st.button(f"Lanjut Pasien {i+1}"))
 
     # Variabel untuk melacak rute saat ini untuk setiap semut
     current_routes = [[] for _ in range(jumlah_semua_semut)]
@@ -211,13 +211,13 @@ elif selected == "Show":
             ruangan_tersedia.remove(ruangan_selanjutnya)
             ruangan_sekarang = ruangan_selanjutnya
 
-            st.write(f"Semut {ant_index+1} Rute Saat Ini: {[chr(ruangan + ord('A')) for ruangan in current_routes[ant_index]]}")
+            st.write(f"Pasien {ant_index+1} Rute Saat Ini: {[chr(ruangan + ord('A')) for ruangan in current_routes[ant_index]]}")
 
         current_distances[ant_index] += jarak[ruangan_sekarang][0]  # Kembali ke ruangan A
         current_routes[ant_index].append(0)  # Menambahkan ruangan A ke solusi
 
-        st.write(f"Semut {ant_index+1} Rute Akhir: {[chr(ruangan + ord('A')) for ruangan in current_routes[ant_index]]}")
-        st.write(f"Semut {ant_index+1} Jarak: {current_distances[ant_index]}")
+        st.write(f"Pasien {ant_index+1} Rute Akhir: {[chr(ruangan + ord('A')) for ruangan in current_routes[ant_index]]}")
+        st.write(f"Pasien {ant_index+1} Jarak: {current_distances[ant_index]}")
         st.write("---")
 
     # Perbarui rute saat tombol yang sesuai diklik
@@ -232,7 +232,7 @@ elif selected == "Input":
     st.header("Kalkulasi Optimasi Jarak Antar Ruangan")
     
      #-------------  INPUTAN PENGGUNA  -------------------
-    jumlah_semua_semut = st.number_input("Jumlah Semut", min_value=1, step=1, value=2)
+    jumlah_semua_semut = st.number_input("Jumlah Pasien", min_value=1, step=1, value=2)
     jumlah_ruangan = st.number_input("Jumlah Ruangan", min_value=1, step=1, value=2)
 
     # Membaca input jarak dari pengguna
@@ -244,7 +244,7 @@ elif selected == "Input":
             jarak[j][i] = jarak[i][j]
 
     # Membaca input jumlah semut dari pengguna
-    jumlah_semua_semut = st.number_input("Masukkan jumlah semut: ", min_value=1, step=1)
+    jumlah_semua_semut = st.number_input("Masukkan jumlah pasien: ", min_value=1, step=1)
 
     # Inisialisasi feromon
     feromon = np.ones((jumlah_ruangan, jumlah_ruangan))
